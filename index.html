@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九宫格图片切割工具</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>九宫格图片切割工具</h1>
+            <p class="subtitle">快速将图片切割成九宫格，支持拖拽上传</p>
+        </header>
+
+        <main>
+            <div class="upload-section" id="uploadSection">
+                <div class="upload-area" id="dropZone">
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                    <div class="upload-content">
+                        <img src="upload-icon.svg" alt="上传图标" class="upload-icon">
+                        <p>点击或拖拽图片到此处</p>
+                        <p class="file-types">支持 PNG、JPG 格式</p>
+                        <p class="file-size">文件大小限制：10MB</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-section" id="previewSection" style="display: none;">
+                <div class="original-preview">
+                    <h3>原始图片</h3>
+                    <div class="image-container">
+                        <img id="originalImage" alt="原始图片">
+                    </div>
+                    <div class="image-info">
+                        <span>尺寸：</span>
+                        <span id="originalSize"></span>
+                    </div>
+                </div>
+
+                <div class="grid-preview">
+                    <h3>九宫格预览</h3>
+                    <div class="grid-container" id="gridContainer"></div>
+                    <div class="download-options">
+                        <button id="downloadAll" class="btn primary">打包下载全部</button>
+                        <p class="tip">点击单个图片可单独下载</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>使用HTML5技术开发，支持主流浏览器</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
